@@ -7,26 +7,73 @@ console.log("App is alive");
  */
 function switchChannel(channelName) {
     //Log the channel switch
+    
     console.log("Tuning in to channel", channelName);
 
     //Write the new channel to the right app bar
-    document.getElementById('channel-name').innerHTML = channelName;
+    document.getElementById('channel-name').innerHTML = channelName.name;
 
     //#6 change the #channel #location
-    document.getElementById('channel-location').innerHTML = 'by <a href="http://w3w.co/upgrading.never.helps" target="_blank"><strong>upgrading.never.helps</strong></a>';
+    document.getElementById('channel-location').innerHTML = 'by <strong>' + channelName.createdBy + '</strong>';
 
     /* #6 #liking channels on #click */
-    $('#channel-star').attr('src', 'http://ip.lfe.mw.tum.de/sections/star-o.png');
+        
+        $('#channel-star').toggleClass(channelName.starred = true ? '<i class = "fas fa-star"></i>' : '<i class = "far fa-star"></i>') 
+        && $('#channel-star').toggleClass(channelName.starred = true ? '<i class = "fas fa-star"></i>' : '<i class = "far fa-star"></i>');
+    
+   
+    
+    
 
     /* #6 #highlight the selected #channel.
        This is inefficient (jQuery has to search all channel list items), but we'll change it later on */
     $('#channels li').removeClass('selected');
-    $('#channels li:contains(' + channelName + ')').addClass('selected');
+    currentChannel = $('#channels li:contains(' + channelName.name + ')').addClass('selected');
+    return currentChannel;
 }
 
+/* #determines current channel */ 
+var currentChannel = switchChannel(currentChannel);
+console.log('tuning', currentChannel);
+
+
+
+
+
 /* #6 #liking a channel on #click */
-function star() {
-    $('#channel-star').attr('src', 'http://ip.lfe.mw.tum.de/sections/star.png');
+function star1(appStar1) {
+    if (appStar1 = yummy.starred) {
+        $('#yummy-star').toggleClass('far fa-star') && $('#yummy-star').toggleClass('fas fa-star')
+        && $('#channel-star').toggleClass('far fa-star') && $('#channel-star').toggleClass('fas fa-star');
+    }
+}
+
+function star2 (appStar2) {   
+    if (appStar2 = sevenContinents.starred) {
+        $('#sc-star').toggleClass('far fa-star') && $('#sc-star').toggleClass('fas fa-star')
+        && $('#channel-star').toggleClass('far fa-star') && $('#channel-star').toggleClass('fas fa-star');
+    }
+}
+
+function star3 (appStar3) {   
+    if (appStar3 = killerApp.starred) {
+        $('#ka-star').toggleClass('far fa-star') && $('#ka-star').toggleClass('fas fa-star')
+        && $('#channel-star').toggleClass('far fa-star') && $('#channel-star').toggleClass('fas fa-star');
+    }
+}
+
+function star4 (appStar4) {   
+    if (appStar4 = firstPersonOnMars.starred) {
+        $('#fpom-star').toggleClass('far fa-star') && $('#fpom-star').toggleClass('fas fa-star')
+        && $('#channel-star').toggleClass('far fa-star') && $('#channel-star').toggleClass('fas fa-star');
+    }
+}
+
+function star5 (appStar5) {   
+    if (appStar5 = octoberFest.starred) {
+        $('#octoberfest-star').toggleClass('far fa-star') && $('#octoberfest-star').toggleClass('fas fa-star')
+       && $('#channel-star').toggleClass('far fa-star') && $('#channel-star').toggleClass('fas fa-star');
+    }
 }
 
 /**
@@ -51,3 +98,26 @@ function toggleEmojis() {
     /* $('#emojis').show(); // #show */
     $('#emojis').toggle(); // #toggle
 }
+
+
+/* #determines current location */
+var currentLocation = {
+    longitude : 'longitude',
+    latitude : 'latitude',
+    what3words : 'https://map.what3words.com/moats.fuels.pads'
+};
+console.log(currentLocation);
+
+/* Constructor function for text */
+function Message(createdBy, latitude, longitude, createdOn, 
+        expiresOn, text, own) {
+        currentLocation.what3words = createdBy;
+        currentLocation.latitude = latitude;
+        currentLocation.longitude = longitude;
+        Date.now() = createdOn;
+        createdOn.setDate(createdOn.getDate() + 15) = expiresOn;
+        text,
+        true = own
+}
+
+console.log(expiresOn);
