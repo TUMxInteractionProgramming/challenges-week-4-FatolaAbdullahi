@@ -132,6 +132,11 @@ li .channel-meta  {
     font-size: 24px;
 }
 
+#chat-message {
+    border: o;
+    width: 100%;
+}
+
 li img {
     vertical-align: middle;
 }
@@ -187,6 +192,11 @@ li.selected {
     /* #5 #smileys #override button styles. We set the chat bar to appear like a tab-bar above. This overrides the tab bar's button scaling */
     width: auto;
     flex-grow: 0;
+}
+
+#send-button {
+    position: absolute;
+    right: 16px;
 }
 
 #emojis {

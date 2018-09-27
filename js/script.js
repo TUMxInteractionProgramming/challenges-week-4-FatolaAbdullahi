@@ -108,6 +108,15 @@ var currentLocation = {
 };
 console.log(currentLocation);
 
+/* #New message to be sent on chat bar */
+function sendMessage() {
+    document.getElementById('#chat-message').value();
+    new = Message(messageObject); 
+    createMessageElement(new); 
+        $.append("#message");
+        
+}
+
 /* Constructor function for text */
 function Message(createdBy, latitude, longitude, createdOn, 
         expiresOn, text, own) {
@@ -116,8 +125,14 @@ function Message(createdBy, latitude, longitude, createdOn,
         currentLocation.longitude = longitude;
         Date.now() = createdOn;
         createdOn.setDate(createdOn.getDate() + 15) = expiresOn;
-        text,
-        true = own
+        text = text;
+        true = own;
 }
 
-console.log(expiresOn);
+/* #chat message objects and elements */
+function createMessageElement(messageObject) {
+    $document.getElementById('#message').innerHTML = '<div class="message"><h3><a href="' 
+    + createdBy + '" target="_blank"><strong>' + createdBy + '</strong></a>' 
+    + createdOn + '<em>' + :expiresIn: + 'min. left</em></h3><p>' 
+    + text + '</p><button>+5 min.</button></div>';
+}
