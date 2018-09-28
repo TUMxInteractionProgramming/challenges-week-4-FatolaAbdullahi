@@ -107,10 +107,10 @@ console.log(currentLocation);
 
 /* #New message to be sent on chat bar */
 function sendMessage() {
-    var newChat = document.getElementById('chat-message').value;
+    var newChat = $("#chat-message").val();
     object.create(Message) = new Message(newChat);
     createMessageElement();
-    $.append('#message');
+    $.append('#messages');
 }
 
 /* Constructor function for new chat message */

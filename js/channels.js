@@ -56,7 +56,7 @@ function listChannels() {
     createChannelElement(killerApp);
     createChannelElement(firstPersonOnMars);
     createChannelElement(octoberFest);
-    return new createChannelElement();
+    return new createChannelElement(channelObject);
 }
 
 function createChannelElement(channelObject) {

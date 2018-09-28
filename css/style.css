@@ -189,7 +189,7 @@ li.selected {
     flex-grow: 0;
 }
 
-#messaging {
+#chat-bar #messaging {
     position: absolute;
     right: 16px;
     display: flex;
@@ -199,7 +199,7 @@ li.selected {
 }
 
 #chat-message {
-    width: 390px;
+    
     border: 0px;
 }
 
