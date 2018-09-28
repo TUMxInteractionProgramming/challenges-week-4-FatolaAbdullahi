@@ -96,7 +96,6 @@ h1 #channel-star {
     position:absolute;
     right: 16px;
     font-size: 24px;
-    color: red;
 }
 
 /* CHANNELS LIST */
@@ -132,10 +131,6 @@ li .channel-meta  {
     font-size: 24px;
 }
 
-#chat-message {
-    border: o;
-    width: 100%;
-}
 
 li img {
     vertical-align: middle;
@@ -194,9 +189,18 @@ li.selected {
     flex-grow: 0;
 }
 
-#send-button {
+#messaging {
     position: absolute;
     right: 16px;
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    font-weight: bold;
+}
+
+#chat-message {
+    width: 380px;
+    border: 0px;
 }
 
 #emojis {

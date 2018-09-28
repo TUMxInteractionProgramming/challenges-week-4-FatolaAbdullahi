@@ -17,9 +17,7 @@ function switchChannel(channelName) {
     document.getElementById('channel-location').innerHTML = 'by <strong>' + channelName.createdBy + '</strong>';
 
     /* #6 #liking channels on #click */
-        
-        $('#channel-star').toggleClass(channelName.starred = true ? '<i class = "fas fa-star"></i>' : '<i class = "far fa-star"></i>') 
-        && $('#channel-star').toggleClass(channelName.starred = true ? '<i class = "fas fa-star"></i>' : '<i class = "far fa-star"></i>');
+        channelName.starred = true ? '<i class = "fas fa-star"></i>' : '<i class = "far fa-star"></i>'; 
     
    
     
@@ -27,13 +25,12 @@ function switchChannel(channelName) {
 
     /* #6 #highlight the selected #channel.
        This is inefficient (jQuery has to search all channel list items), but we'll change it later on */
-    $('#channels li').removeClass('selected');
-    currentChannel = $('#channels li:contains(' + channelName.name + ')').addClass('selected');
-    return currentChannel;
+   $('#channels li').removeClass('selected');
+   $('#channels li:contains(' + channelName.name + ')').addClass('selected');
 }
 
 /* #determines current channel */ 
-var currentChannel = switchChannel(currentChannel);
+var currentChannel = switchChannel.name;
 console.log('tuning', currentChannel);
 
 
@@ -110,29 +107,28 @@ console.log(currentLocation);
 
 /* #New message to be sent on chat bar */
 function sendMessage() {
-    document.getElementById('#chat-message').value();
-    new = Message(messageObject); 
-    createMessageElement(new); 
-        $.append("#message");
-        
+    document.getElementById('#chat-message').value;
+    var New = Message(messageInfo.text); 
+    $('#message').append(createMessageElement());   
 }
 
 /* Constructor function for text */
 function Message(createdBy, latitude, longitude, createdOn, 
         expiresOn, text, own) {
-        currentLocation.what3words = createdBy;
-        currentLocation.latitude = latitude;
-        currentLocation.longitude = longitude;
-        Date.now() = createdOn;
-        createdOn.setDate(createdOn.getDate() + 15) = expiresOn;
-        text = text;
-        true = own;
+        var messageInfo = { createdBy: currentLocation.what3words, 
+                            latitude: currentLocation.latitude,
+                            longitude: currentLocation.longitude,
+                            createdOn: Date.now(),
+                            expiresOn: createdOn.setDate(createdOn.getDate() + 15),
+                            text: "",
+                            own: true
+        }
 }
 
 /* #chat message objects and elements */
 function createMessageElement(messageObject) {
     $document.getElementById('#message').innerHTML = '<div class="message"><h3><a href="' 
     + createdBy + '" target="_blank"><strong>' + createdBy + '</strong></a>' 
-    + createdOn + '<em>' + :expiresIn: + 'min. left</em></h3><p>' 
+    + createdOn + '<em>:' + expiresIn + ':min. left</em></h3><p>' 
     + text + '</p><button>+5 min.</button></div>';
 }
