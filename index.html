@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" 
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
-<body>
+<body onload="listChannels()">
 
 <!-- channel area -->
 <div id="channels">
@@ -173,12 +173,12 @@
         <div id="emojis">&#x1F601; &#x1F602; &#x1F603; &#x1F604; &#x1F605; &#x1F606; &#x1F607;</div>
         
         <!-- #iput of text on chat bar-->
-        <form id="messaging">
-            <input type="text" id= "chat-message" placeholder="Message..." name="chatmessage" maxlength="140" > 
+        <form name = "chat" id="messaging">
+            <input type="text" id= "chat-message" placeholder ="Message..." name ="chatmessage" maxlength="140" > 
         
             <!-- #send button on chat bar-->
-            <button id="send-button" onclick = "sendMessage()">
-                <i class="fas fa-arrow-right"></i>
+            <button id ="send-button" onclick = "sendMessage()">
+                    <i class = "fas fa-arrow-right"></i>
             </button>
         </form>
     </div>

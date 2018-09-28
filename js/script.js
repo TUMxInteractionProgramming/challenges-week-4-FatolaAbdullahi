@@ -107,27 +107,26 @@ console.log(currentLocation);
 
 /* #New message to be sent on chat bar */
 function sendMessage() {
-    document.getElementById('#chat-message').value;
-    var New = Message(messageInfo.text); 
-    $('#message').append(createMessageElement());   
+    var newChat = document.getElementById('chat-message').value;
+    object.create(Message) = new Message(newChat);
+    createMessageElement();
+    $.append('#message');
 }
 
-/* Constructor function for text */
-function Message(createdBy, latitude, longitude, createdOn, 
-        expiresOn, text, own) {
-        var messageInfo = { createdBy: currentLocation.what3words, 
-                            latitude: currentLocation.latitude,
-                            longitude: currentLocation.longitude,
-                            createdOn: Date.now(),
-                            expiresOn: createdOn.setDate(createdOn.getDate() + 15),
-                            text: "",
-                            own: true
-        }
+/* Constructor function for new chat message */
+function Message(createdBy, latitude, longitude, createdOn, expiresOn, text, own) {
+        this.createdBy = currentLocation.what3words;
+        this.latitude = currentLocation.latitude;
+        this.longitude = currentLocation.longitude;
+        this.createdOn = Date.now();
+        this.expiresOn = createdOn.setDate(createdOn.getDate() + 15);
+        this.text = "";
+        this.own = true;
 }
 
 /* #chat message objects and elements */
 function createMessageElement(messageObject) {
-    $document.getElementById('#message').innerHTML = '<div class="message"><h3><a href="' 
+    this.messageObject = $('#message').innerHTML = '<div class="message"><h3><a href="' 
     + createdBy + '" target="_blank"><strong>' + createdBy + '</strong></a>' 
     + createdOn + '<em>:' + expiresIn + ':min. left</em></h3><p>' 
     + text + '</p><button>+5 min.</button></div>';

@@ -49,4 +49,16 @@ var octoberFest = {
     messageCount: 999
 };
 
+function listChannels() {
+    $("<li>").appendTo("<ul></ul>");
+    createChannelElement(yummy);
+    createChannelElement(sevenContinents);
+    createChannelElement(killerApp);
+    createChannelElement(firstPersonOnMars);
+    createChannelElement(octoberFest);
+    return new createChannelElement();
+}
 
+function createChannelElement(channelObject) {
+
+}
