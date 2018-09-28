@@ -113,7 +113,7 @@ function sendMessage() {
     $.append('#messages');
 }
 
-/* Constructor function for new chat message */
+/* Constructor functn for new chat message */
 function Message(createdBy, latitude, longitude, createdOn, expiresOn, text, own) {
         this.createdBy = currentLocation.what3words;
         this.latitude = currentLocation.latitude;
